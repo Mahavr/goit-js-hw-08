@@ -13,15 +13,15 @@ form.addEventListener(
     );
   }, 500)
 );
-const { email, message } = feedback;
+
 document.addEventListener('DOMContentLoaded', event => {
-  form.elements.email.value = email || '';
-  form.elements.message.value = message || '';
+  form.elements.email.value = feedback.email || '';
+  form.elements.message.value = feedback.message || '';
 });
 form.addEventListener('submit', event => {
   event.preventDefault();
   if (form.elements.email.value != '' && form.elements.message.value != '') {
-    console.log(email, message);
+    console.log(form.elements.email.value, form.elements.message.value);
     form.elements.email.value = '';
     form.elements.message.value = '';
     localStorage.removeItem('feedback-form-state');
